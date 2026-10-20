@@ -520,10 +520,9 @@ output {
 }
 
 .letras a {
-    display: grid;
-    place-items: center;
+    position: relative;
+    display: block;
     aspect-ratio: 1;
-    padding: 0.4rem;
     border: 1px solid var(--filete);
     transition: border-color 0.2s var(--curva);
 }
@@ -532,9 +531,12 @@ output {
     border-color: var(--tinta);
 }
 
+/* En posición absoluta: una letra alta y estrecha (la I) no estira la casilla */
 .letras img {
-    width: 100%;
-    height: 100%;
+    position: absolute;
+    inset: 0.4rem;
+    width: calc(100% - 0.8rem);
+    height: calc(100% - 0.8rem);
     object-fit: contain;
 }
 
