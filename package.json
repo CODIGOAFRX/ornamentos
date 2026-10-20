@@ -1,0 +1,14 @@
+{
+  "name": "ornamentos",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Capitulares y florones de libros antiguos de dominio público, en SVG y listos para la web.",
+  "scripts": {
+    "test": "node --test \"test/*.test.mjs\"",
+    "build": "node scripts/build.mjs",
+    "dev": "npm run build && node scripts/dev.mjs",
+    "deploy": "npm run build && npx --yes wrangler@4.151.2 deploy"
+  },
+  "engines": { "node": ">=22" }
+}

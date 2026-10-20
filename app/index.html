@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ornamentos · Capitulares y florones de libros antiguos</title>
+    <meta name="description" content="Capitulares de cinco alfabetos históricos y florones de torno de 1869, vectorizados y listos para usar en la web con una línea de CSS. Dominio público.">
+    <meta name="theme-color" content="#f3eee3">
+    <link rel="canonical" href="https://www.pedrogomez.dev/proyecto/ornamentos/">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Ornamentos · Capitulares y florones de libros antiguos">
+    <meta property="og:description" content="Alfabetos de los siglos XI al XIX y florones de torno, en SVG y listos para la web.">
+    <link rel="icon" href="{{BASE}}/favicon.svg" type="image/svg+xml">
+    <link rel="preload" href="{{BASE}}/fonts/fell.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="{{BASE}}/ornamentos.css?v={{v:ornamentos.css}}">
+    <script type="module" src="{{BASE}}/ornamentos.js?v={{v:ornamentos.js}}"></script>
+</head>
+<body>
+    <header class="cabecera">
+        <nav class="nav">
+            <a class="volver" href="/#projects">Pedro Gómez.</a>
+            <a href="#capitular">Capitular</a>
+            <a href="#florones">Florones</a>
+            <a href="#catalogo">Catálogo</a>
+        </nav>
+        <div class="portada">
+            <h1><span class="h1-capitular" id="h1-capitular" aria-hidden="true"></span><span class="sr-only">O</span>rnamentos</h1>
+            <p class="lema">Capitulares de cinco alfabetos, del siglo XI al XIX, y florones de torno de 1869, sacados
+                de libros de dominio público y preparados para la web: en SVG, del color que quieras y con una línea de CSS.</p>
+        </div>
+    </header>
+
+    <main>
+        <section class="seccion" id="capitular" aria-labelledby="titulo-capitular">
+            <div class="seccion-cabeza">
+                <h2 id="titulo-capitular">Capitular</h2>
+                <p>Escribe un párrafo, elige un alfabeto y copia el código. La primera letra se convierte en una capitular.</p>
+            </div>
+
+            <div class="compositor">
+                <form class="mandos" id="mandos" aria-label="Opciones de la capitular">
+                    <label class="campo">
+                        <span class="rotulo">Texto</span>
+                        <textarea id="texto" rows="6" spellcheck="false">En un lugar de la Mancha, de cuyo nombre no quiero acordarme, no ha mucho tiempo que vivía un hidalgo de los de lanza en astillero, adarga antigua, rocín flaco y galgo corredor. Una olla de algo más vaca que carnero, salpicón las más noches, duelos y quebrantos los sábados, lentejas los viernes, algún palomino de añadidura los domingos, consumían las tres partes de su hacienda.</textarea>
+                    </label>
+
+                    <fieldset class="campo">
+                        <legend class="rotulo">Alfabeto</legend>
+                        <div class="alfabetos" id="alfabetos"></div>
+                    </fieldset>
+
+                    <fieldset class="campo">
+                        <legend class="rotulo">Color</legend>
+                        <div class="colores" id="colores">
+                            <label><input type="radio" name="color" value="#1d1b17" checked><span style="--c:#1d1b17">Tinta</span></label>
+                            <label><input type="radio" name="color" value="#6b4423"><span style="--c:#6b4423">Sepia</span></label>
+                            <label><input type="radio" name="color" value="#a8322a"><span style="--c:#a8322a">Bermellón</span></label>
+                            <label><input type="radio" name="color" value="#27466e"><span style="--c:#27466e">Azul</span></label>
+                            <label><input type="radio" name="color" value="original"><span class="original">Original</span></label>
+                        </div>
+                    </fieldset>
+
+                    <label class="campo">
+                        <span class="rotulo">Alto <output id="lineas-valor">4</output> líneas</span>
+                        <input type="range" id="lineas" min="2" max="7" value="4">
+                    </label>
+                </form>
+
+                <article class="pagina" id="pagina" aria-live="polite">
+                    <p class="parrafo" id="parrafo"></p>
+                    <p class="aviso" id="aviso"></p>
+                </article>
+            </div>
+
+            <div class="codigo" id="codigo-capitular">
+                <div class="codigo-cabeza">
+                    <h3>Para tu web</h3>
+                    <div class="descargas" id="descargas"></div>
+                </div>
+                <pre><code id="html-capitular"></code></pre>
+                <pre><code id="css-capitular"></code></pre>
+                <button type="button" class="copiar" data-copiar="capitular">Copiar HTML y CSS</button>
+            </div>
+        </section>
+
+        <section class="seccion" id="florones" aria-labelledby="titulo-florones">
+            <div class="seccion-cabeza">
+                <h2 id="titulo-florones">Florones</h2>
+                <p>Dibujos de torno fotografiados por Edward J. Woolsey en 1869. Sirven de separador entre apartados
+                    y se tiñen con <code>background-color</code>, porque se usan como máscara.</p>
+            </div>
+            <div class="florones" id="lista-florones" role="radiogroup" aria-label="Florón"></div>
+            <div class="separador-muestra" aria-hidden="true">
+                <p>…y así, del poco dormir y del mucho leer, se le secó el celebro, de manera que vino a perder el juicio.</p>
+                <hr class="floron-muestra" id="floron-muestra">
+                <p>Llenósele la fantasía de todo aquello que leía en los libros.</p>
+            </div>
+            <div class="codigo">
+                <pre><code id="codigo-floron"></code></pre>
+                <button type="button" class="copiar" data-copiar="floron">Copiar HTML y CSS</button>
+            </div>
+        </section>
+
+        <section class="seccion" id="catalogo" aria-labelledby="titulo-catalogo">
+            <div class="seccion-cabeza">
+                <h2 id="titulo-catalogo">Catálogo</h2>
+                <p>Todas las letras, una por una. Cada una se descarga en SVG; los alfabetos antiguos no tienen J, U ni W,
+                    como en su época, y en su lugar se usan la I, la V y la doble V.</p>
+            </div>
+            <div id="lista-catalogo"></div>
+        </section>
+    </main>
+
+    <footer class="pie" id="pie">
+        <p>Capitulares del <a href="https://archive.org/details/alphabetalbumcol00silv" target="_blank" rel="noopener">Alphabet-album</a>
+            de Joseph-Balthazar Silvestre (París, 1843), escaneado por la Boston Public Library. Florones de
+            <cite>Specimens of Fancy Turning</cite>, de Edward J. Woolsey (1869), vía el
+            <a href="https://pdimagearchive.org/" target="_blank" rel="noopener">Public Domain Image Archive</a>.
+            Todo es de dominio público; los SVG también.</p>
+        <p>Un proyecto de <a href="/">Pedro Gómez</a> · <a href="https://github.com/CODIGOAFRX/ornamentos" target="_blank" rel="noopener">código</a></p>
+    </footer>
+    <p class="aviso-copia" id="aviso-copia" role="status" aria-live="polite"></p>
+</body>
+</html>

@@ -1,0 +1,12 @@
+/proyecto/ornamentos/*
+  Content-Security-Policy: default-src 'self'; script-src 'self'; img-src 'self' data:; connect-src 'self'; style-src 'self' 'unsafe-inline'; font-src 'self'; frame-ancestors 'none'; base-uri 'self'; form-action 'none'
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+
+# Las capitulares y los florones se usan desde otras webs como máscara CSS: necesitan CORS
+/proyecto/ornamentos/media/*
+  Access-Control-Allow-Origin: *
+  Cache-Control: public, max-age=31536000, immutable
+
+/proyecto/ornamentos/fonts/*
+  Cache-Control: public, max-age=31536000, immutable

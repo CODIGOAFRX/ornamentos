@@ -1,0 +1,732 @@
+{
+ "gotico": [
+  {
+   "letra": "A",
+   "ancho": 210,
+   "alto": 225,
+   "kb": 70.6
+  },
+  {
+   "letra": "B",
+   "ancho": 223,
+   "alto": 224,
+   "kb": 63.5
+  },
+  {
+   "letra": "C",
+   "ancho": 223,
+   "alto": 226,
+   "kb": 55.1
+  },
+  {
+   "letra": "D",
+   "ancho": 223,
+   "alto": 220,
+   "kb": 53.6
+  },
+  {
+   "letra": "E",
+   "ancho": 224,
+   "alto": 220,
+   "kb": 56.6
+  },
+  {
+   "letra": "F",
+   "ancho": 218,
+   "alto": 219,
+   "kb": 52.7
+  },
+  {
+   "letra": "G",
+   "ancho": 222,
+   "alto": 226,
+   "kb": 64.8
+  },
+  {
+   "letra": "H",
+   "ancho": 214,
+   "alto": 222,
+   "kb": 67.2
+  },
+  {
+   "letra": "I",
+   "ancho": 217,
+   "alto": 223,
+   "kb": 61.5
+  },
+  {
+   "letra": "K",
+   "ancho": 224,
+   "alto": 224,
+   "kb": 52.4
+  },
+  {
+   "letra": "L",
+   "ancho": 222,
+   "alto": 231,
+   "kb": 51.6
+  },
+  {
+   "letra": "M",
+   "ancho": 221,
+   "alto": 224,
+   "kb": 53.6
+  },
+  {
+   "letra": "N",
+   "ancho": 219,
+   "alto": 217,
+   "kb": 51.2
+  },
+  {
+   "letra": "O",
+   "ancho": 220,
+   "alto": 223,
+   "kb": 57.0
+  },
+  {
+   "letra": "P",
+   "ancho": 217,
+   "alto": 228,
+   "kb": 55.4
+  },
+  {
+   "letra": "Q",
+   "ancho": 210,
+   "alto": 224,
+   "kb": 77.3
+  },
+  {
+   "letra": "R",
+   "ancho": 215,
+   "alto": 213,
+   "kb": 58.9
+  },
+  {
+   "letra": "S",
+   "ancho": 220,
+   "alto": 220,
+   "kb": 54.3
+  },
+  {
+   "letra": "T",
+   "ancho": 227,
+   "alto": 215,
+   "kb": 49.0
+  },
+  {
+   "letra": "U",
+   "ancho": 225,
+   "alto": 218,
+   "kb": 52.8
+  },
+  {
+   "letra": "V",
+   "ancho": 222,
+   "alto": 218,
+   "kb": 56.3
+  },
+  {
+   "letra": "X",
+   "ancho": 220,
+   "alto": 222,
+   "kb": 58.1
+  },
+  {
+   "letra": "Y",
+   "ancho": 218,
+   "alto": 221,
+   "kb": 57.9
+  },
+  {
+   "letra": "Z",
+   "ancho": 212,
+   "alto": 223,
+   "kb": 63.6
+  }
+ ],
+ "veneciano": [
+  {
+   "letra": "A",
+   "ancho": 204,
+   "alto": 178,
+   "kb": 17.7
+  },
+  {
+   "letra": "B",
+   "ancho": 172,
+   "alto": 185,
+   "kb": 17.1
+  },
+  {
+   "letra": "C",
+   "ancho": 179,
+   "alto": 181,
+   "kb": 9.7
+  },
+  {
+   "letra": "D",
+   "ancho": 190,
+   "alto": 185,
+   "kb": 18.1
+  },
+  {
+   "letra": "E",
+   "ancho": 186,
+   "alto": 170,
+   "kb": 13.1
+  },
+  {
+   "letra": "F",
+   "ancho": 182,
+   "alto": 181,
+   "kb": 13.8
+  },
+  {
+   "letra": "G",
+   "ancho": 185,
+   "alto": 177,
+   "kb": 14.9
+  },
+  {
+   "letra": "H",
+   "ancho": 181,
+   "alto": 173,
+   "kb": 12.5
+  },
+  {
+   "letra": "I",
+   "ancho": 132,
+   "alto": 171,
+   "kb": 9.4
+  },
+  {
+   "letra": "L",
+   "ancho": 190,
+   "alto": 168,
+   "kb": 11.7
+  },
+  {
+   "letra": "M",
+   "ancho": 179,
+   "alto": 174,
+   "kb": 12.4
+  },
+  {
+   "letra": "N",
+   "ancho": 185,
+   "alto": 170,
+   "kb": 12.0
+  },
+  {
+   "letra": "O",
+   "ancho": 180,
+   "alto": 175,
+   "kb": 9.9
+  },
+  {
+   "letra": "P",
+   "ancho": 188,
+   "alto": 179,
+   "kb": 13.8
+  },
+  {
+   "letra": "Q",
+   "ancho": 189,
+   "alto": 194,
+   "kb": 11.8
+  },
+  {
+   "letra": "R",
+   "ancho": 182,
+   "alto": 176,
+   "kb": 12.8
+  },
+  {
+   "letra": "S",
+   "ancho": 179,
+   "alto": 152,
+   "kb": 6.0
+  },
+  {
+   "letra": "T",
+   "ancho": 177,
+   "alto": 159,
+   "kb": 7.9
+  },
+  {
+   "letra": "V",
+   "ancho": 191,
+   "alto": 153,
+   "kb": 7.8
+  },
+  {
+   "letra": "X",
+   "ancho": 168,
+   "alto": 155,
+   "kb": 7.7
+  },
+  {
+   "letra": "Y",
+   "ancho": 181,
+   "alto": 166,
+   "kb": 9.5
+  },
+  {
+   "letra": "Z",
+   "ancho": 180,
+   "alto": 162,
+   "kb": 11.4
+  }
+ ],
+ "romanico": [
+  {
+   "letra": "A",
+   "ancho": 145,
+   "alto": 142,
+   "kb": 6.5
+  },
+  {
+   "letra": "B",
+   "ancho": 110,
+   "alto": 144,
+   "kb": 7.6
+  },
+  {
+   "letra": "C",
+   "ancho": 136,
+   "alto": 145,
+   "kb": 6.9
+  },
+  {
+   "letra": "D",
+   "ancho": 147,
+   "alto": 138,
+   "kb": 12.1
+  },
+  {
+   "letra": "E",
+   "ancho": 95,
+   "alto": 152,
+   "kb": 7.6
+  },
+  {
+   "letra": "F",
+   "ancho": 103,
+   "alto": 141,
+   "kb": 5.7
+  },
+  {
+   "letra": "G",
+   "ancho": 135,
+   "alto": 143,
+   "kb": 8.2
+  },
+  {
+   "letra": "H",
+   "ancho": 130,
+   "alto": 143,
+   "kb": 7.8
+  },
+  {
+   "letra": "I",
+   "ancho": 58,
+   "alto": 142,
+   "kb": 2.8
+  },
+  {
+   "letra": "K",
+   "ancho": 117,
+   "alto": 142,
+   "kb": 5.1
+  },
+  {
+   "letra": "L",
+   "ancho": 109,
+   "alto": 142,
+   "kb": 5.6
+  },
+  {
+   "letra": "M",
+   "ancho": 153,
+   "alto": 146,
+   "kb": 10.4
+  },
+  {
+   "letra": "N",
+   "ancho": 145,
+   "alto": 139,
+   "kb": 8.3
+  },
+  {
+   "letra": "O",
+   "ancho": 145,
+   "alto": 145,
+   "kb": 8.4
+  },
+  {
+   "letra": "P",
+   "ancho": 107,
+   "alto": 141,
+   "kb": 4.8
+  },
+  {
+   "letra": "Q",
+   "ancho": 147,
+   "alto": 164,
+   "kb": 7.6
+  },
+  {
+   "letra": "R",
+   "ancho": 123,
+   "alto": 147,
+   "kb": 6.1
+  },
+  {
+   "letra": "S",
+   "ancho": 92,
+   "alto": 140,
+   "kb": 8.1
+  },
+  {
+   "letra": "T",
+   "ancho": 120,
+   "alto": 144,
+   "kb": 7.2
+  },
+  {
+   "letra": "U",
+   "ancho": 147,
+   "alto": 141,
+   "kb": 9.4
+  },
+  {
+   "letra": "V",
+   "ancho": 139,
+   "alto": 147,
+   "kb": 7.0
+  },
+  {
+   "letra": "X",
+   "ancho": 144,
+   "alto": 141,
+   "kb": 4.1
+  },
+  {
+   "letra": "Y",
+   "ancho": 132,
+   "alto": 146,
+   "kb": 5.0
+  },
+  {
+   "letra": "Z",
+   "ancho": 129,
+   "alto": 143,
+   "kb": 7.0
+  }
+ ],
+ "rustico": [
+  {
+   "letra": "A",
+   "ancho": 204,
+   "alto": 166,
+   "kb": 30.4
+  },
+  {
+   "letra": "B",
+   "ancho": 207,
+   "alto": 162,
+   "kb": 40.1
+  },
+  {
+   "letra": "C",
+   "ancho": 177,
+   "alto": 155,
+   "kb": 29.7
+  },
+  {
+   "letra": "D",
+   "ancho": 209,
+   "alto": 168,
+   "kb": 36.0
+  },
+  {
+   "letra": "E",
+   "ancho": 182,
+   "alto": 167,
+   "kb": 36.1
+  },
+  {
+   "letra": "F",
+   "ancho": 197,
+   "alto": 167,
+   "kb": 33.0
+  },
+  {
+   "letra": "G",
+   "ancho": 164,
+   "alto": 166,
+   "kb": 36.5
+  },
+  {
+   "letra": "H",
+   "ancho": 209,
+   "alto": 222,
+   "kb": 48.6
+  },
+  {
+   "letra": "I",
+   "ancho": 168,
+   "alto": 187,
+   "kb": 40.2
+  },
+  {
+   "letra": "K",
+   "ancho": 219,
+   "alto": 167,
+   "kb": 43.2
+  },
+  {
+   "letra": "L",
+   "ancho": 208,
+   "alto": 218,
+   "kb": 36.7
+  },
+  {
+   "letra": "M",
+   "ancho": 298,
+   "alto": 184,
+   "kb": 67.4
+  },
+  {
+   "letra": "N",
+   "ancho": 195,
+   "alto": 172,
+   "kb": 47.5
+  },
+  {
+   "letra": "O",
+   "ancho": 168,
+   "alto": 187,
+   "kb": 34.6
+  },
+  {
+   "letra": "P",
+   "ancho": 199,
+   "alto": 219,
+   "kb": 47.8
+  },
+  {
+   "letra": "Q",
+   "ancho": 202,
+   "alto": 229,
+   "kb": 43.2
+  },
+  {
+   "letra": "R",
+   "ancho": 200,
+   "alto": 170,
+   "kb": 42.7
+  },
+  {
+   "letra": "S",
+   "ancho": 214,
+   "alto": 187,
+   "kb": 45.3
+  },
+  {
+   "letra": "T",
+   "ancho": 206,
+   "alto": 177,
+   "kb": 33.0
+  },
+  {
+   "letra": "U",
+   "ancho": 173,
+   "alto": 178,
+   "kb": 42.7
+  },
+  {
+   "letra": "V",
+   "ancho": 210,
+   "alto": 192,
+   "kb": 40.2
+  },
+  {
+   "letra": "W",
+   "ancho": 274,
+   "alto": 184,
+   "kb": 53.6
+  },
+  {
+   "letra": "X",
+   "ancho": 193,
+   "alto": 201,
+   "kb": 36.5
+  },
+  {
+   "letra": "Y",
+   "ancho": 196,
+   "alto": 206,
+   "kb": 37.4
+  },
+  {
+   "letra": "Z",
+   "ancho": 189,
+   "alto": 186,
+   "kb": 34.6
+  }
+ ],
+ "barroco": [
+  {
+   "letra": "A",
+   "ancho": 256,
+   "alto": 173,
+   "kb": 32.3
+  },
+  {
+   "letra": "B",
+   "ancho": 188,
+   "alto": 177,
+   "kb": 26.0
+  },
+  {
+   "letra": "C",
+   "ancho": 197,
+   "alto": 174,
+   "kb": 21.9
+  },
+  {
+   "letra": "D",
+   "ancho": 218,
+   "alto": 182,
+   "kb": 22.8
+  },
+  {
+   "letra": "E",
+   "ancho": 212,
+   "alto": 170,
+   "kb": 20.4
+  },
+  {
+   "letra": "F",
+   "ancho": 181,
+   "alto": 168,
+   "kb": 15.7
+  },
+  {
+   "letra": "G",
+   "ancho": 209,
+   "alto": 174,
+   "kb": 24.5
+  },
+  {
+   "letra": "H",
+   "ancho": 204,
+   "alto": 176,
+   "kb": 19.5
+  },
+  {
+   "letra": "I",
+   "ancho": 196,
+   "alto": 175,
+   "kb": 18.8
+  },
+  {
+   "letra": "K",
+   "ancho": 221,
+   "alto": 171,
+   "kb": 20.2
+  },
+  {
+   "letra": "L",
+   "ancho": 171,
+   "alto": 168,
+   "kb": 16.1
+  },
+  {
+   "letra": "M",
+   "ancho": 274,
+   "alto": 172,
+   "kb": 27.3
+  },
+  {
+   "letra": "N",
+   "ancho": 208,
+   "alto": 171,
+   "kb": 21.1
+  },
+  {
+   "letra": "O",
+   "ancho": 205,
+   "alto": 174,
+   "kb": 19.5
+  },
+  {
+   "letra": "P",
+   "ancho": 189,
+   "alto": 165,
+   "kb": 16.8
+  },
+  {
+   "letra": "Q",
+   "ancho": 198,
+   "alto": 173,
+   "kb": 18.4
+  },
+  {
+   "letra": "R",
+   "ancho": 214,
+   "alto": 170,
+   "kb": 20.3
+  },
+  {
+   "letra": "S",
+   "ancho": 211,
+   "alto": 170,
+   "kb": 16.6
+  },
+  {
+   "letra": "T",
+   "ancho": 211,
+   "alto": 168,
+   "kb": 18.1
+  },
+  {
+   "letra": "U",
+   "ancho": 212,
+   "alto": 169,
+   "kb": 19.0
+  },
+  {
+   "letra": "V",
+   "ancho": 192,
+   "alto": 167,
+   "kb": 17.3
+  },
+  {
+   "letra": "W",
+   "ancho": 252,
+   "alto": 171,
+   "kb": 27.2
+  },
+  {
+   "letra": "X",
+   "ancho": 221,
+   "alto": 177,
+   "kb": 20.4
+  },
+  {
+   "letra": "Y",
+   "ancho": 222,
+   "alto": 173,
+   "kb": 21.0
+  },
+  {
+   "letra": "Z",
+   "ancho": 198,
+   "alto": 170,
+   "kb": 22.5
+  }
+ ]
+}

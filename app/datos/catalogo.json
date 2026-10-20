@@ -1,0 +1,727 @@
+{
+ "fuente": {
+  "titulo": "Alphabet-album: collection de soixante feuilles d’alphabets historiés et fleuronnés",
+  "autor": "Joseph-Balthazar Silvestre",
+  "anio": 1843,
+  "url": "https://archive.org/details/alphabetalbumcol00silv",
+  "biblioteca": "Boston Public Library"
+ },
+ "alfabetos": [
+  {
+   "id": "romanico",
+   "nombre": "Románico alemán",
+   "siglo": "XI",
+   "origen": "Evangeliario, Biblioteca Real de Múnich",
+   "oscuro": true,
+   "bicolor": false,
+   "letras": {
+    "A": [
+     145,
+     142
+    ],
+    "B": [
+     110,
+     144
+    ],
+    "C": [
+     136,
+     145
+    ],
+    "D": [
+     147,
+     138
+    ],
+    "E": [
+     95,
+     152
+    ],
+    "F": [
+     103,
+     141
+    ],
+    "G": [
+     135,
+     143
+    ],
+    "H": [
+     130,
+     143
+    ],
+    "I": [
+     58,
+     142
+    ],
+    "K": [
+     117,
+     142
+    ],
+    "L": [
+     109,
+     142
+    ],
+    "M": [
+     153,
+     146
+    ],
+    "N": [
+     145,
+     139
+    ],
+    "O": [
+     145,
+     145
+    ],
+    "P": [
+     107,
+     141
+    ],
+    "Q": [
+     147,
+     164
+    ],
+    "R": [
+     123,
+     147
+    ],
+    "S": [
+     92,
+     140
+    ],
+    "T": [
+     120,
+     144
+    ],
+    "U": [
+     147,
+     141
+    ],
+    "V": [
+     139,
+     147
+    ],
+    "X": [
+     144,
+     141
+    ],
+    "Y": [
+     132,
+     146
+    ],
+    "Z": [
+     129,
+     143
+    ]
+   }
+  },
+  {
+   "id": "gotico",
+   "nombre": "Gótico alemán",
+   "siglo": "XIV",
+   "origen": "Manuscrito de Viena",
+   "oscuro": false,
+   "bicolor": true,
+   "letras": {
+    "A": [
+     210,
+     225
+    ],
+    "B": [
+     223,
+     224
+    ],
+    "C": [
+     223,
+     226
+    ],
+    "D": [
+     223,
+     220
+    ],
+    "E": [
+     224,
+     220
+    ],
+    "F": [
+     218,
+     219
+    ],
+    "G": [
+     222,
+     226
+    ],
+    "H": [
+     214,
+     222
+    ],
+    "I": [
+     217,
+     223
+    ],
+    "K": [
+     224,
+     224
+    ],
+    "L": [
+     222,
+     231
+    ],
+    "M": [
+     221,
+     224
+    ],
+    "N": [
+     219,
+     217
+    ],
+    "O": [
+     220,
+     223
+    ],
+    "P": [
+     217,
+     228
+    ],
+    "Q": [
+     210,
+     224
+    ],
+    "R": [
+     215,
+     213
+    ],
+    "S": [
+     220,
+     220
+    ],
+    "T": [
+     227,
+     215
+    ],
+    "U": [
+     225,
+     218
+    ],
+    "V": [
+     222,
+     218
+    ],
+    "X": [
+     220,
+     222
+    ],
+    "Y": [
+     218,
+     221
+    ],
+    "Z": [
+     212,
+     223
+    ]
+   }
+  },
+  {
+   "id": "veneciano",
+   "nombre": "Veneciano",
+   "siglo": "XVI",
+   "origen": "Manuscrito de Venecia",
+   "oscuro": false,
+   "bicolor": false,
+   "letras": {
+    "A": [
+     204,
+     178
+    ],
+    "B": [
+     172,
+     185
+    ],
+    "C": [
+     179,
+     181
+    ],
+    "D": [
+     190,
+     185
+    ],
+    "E": [
+     186,
+     170
+    ],
+    "F": [
+     182,
+     181
+    ],
+    "G": [
+     185,
+     177
+    ],
+    "H": [
+     181,
+     173
+    ],
+    "I": [
+     132,
+     171
+    ],
+    "L": [
+     190,
+     168
+    ],
+    "M": [
+     179,
+     174
+    ],
+    "N": [
+     185,
+     170
+    ],
+    "O": [
+     180,
+     175
+    ],
+    "P": [
+     188,
+     179
+    ],
+    "Q": [
+     189,
+     194
+    ],
+    "R": [
+     182,
+     176
+    ],
+    "S": [
+     179,
+     152
+    ],
+    "T": [
+     177,
+     159
+    ],
+    "V": [
+     191,
+     153
+    ],
+    "X": [
+     168,
+     155
+    ],
+    "Y": [
+     181,
+     166
+    ],
+    "Z": [
+     180,
+     162
+    ]
+   }
+  },
+  {
+   "id": "barroco",
+   "nombre": "Barroco alemán",
+   "siglo": "XVIII",
+   "origen": "Manuscrito de Viena",
+   "oscuro": false,
+   "bicolor": false,
+   "letras": {
+    "A": [
+     256,
+     173
+    ],
+    "B": [
+     188,
+     177
+    ],
+    "C": [
+     197,
+     174
+    ],
+    "D": [
+     218,
+     182
+    ],
+    "E": [
+     212,
+     170
+    ],
+    "F": [
+     181,
+     168
+    ],
+    "G": [
+     209,
+     174
+    ],
+    "H": [
+     204,
+     176
+    ],
+    "I": [
+     196,
+     175
+    ],
+    "K": [
+     221,
+     171
+    ],
+    "L": [
+     171,
+     168
+    ],
+    "M": [
+     274,
+     172
+    ],
+    "N": [
+     208,
+     171
+    ],
+    "O": [
+     205,
+     174
+    ],
+    "P": [
+     189,
+     165
+    ],
+    "Q": [
+     198,
+     173
+    ],
+    "R": [
+     214,
+     170
+    ],
+    "S": [
+     211,
+     170
+    ],
+    "T": [
+     211,
+     168
+    ],
+    "U": [
+     212,
+     169
+    ],
+    "V": [
+     192,
+     167
+    ],
+    "W": [
+     252,
+     171
+    ],
+    "X": [
+     221,
+     177
+    ],
+    "Y": [
+     222,
+     173
+    ],
+    "Z": [
+     198,
+     170
+    ]
+   }
+  },
+  {
+   "id": "rustico",
+   "nombre": "Rústico",
+   "siglo": "XIX",
+   "origen": "Alfabeto forestal francés",
+   "oscuro": false,
+   "bicolor": false,
+   "letras": {
+    "A": [
+     204,
+     166
+    ],
+    "B": [
+     207,
+     162
+    ],
+    "C": [
+     177,
+     155
+    ],
+    "D": [
+     209,
+     168
+    ],
+    "E": [
+     182,
+     167
+    ],
+    "F": [
+     197,
+     167
+    ],
+    "G": [
+     164,
+     166
+    ],
+    "H": [
+     209,
+     222
+    ],
+    "I": [
+     168,
+     187
+    ],
+    "K": [
+     219,
+     167
+    ],
+    "L": [
+     208,
+     218
+    ],
+    "M": [
+     298,
+     184
+    ],
+    "N": [
+     195,
+     172
+    ],
+    "O": [
+     168,
+     187
+    ],
+    "P": [
+     199,
+     219
+    ],
+    "Q": [
+     202,
+     229
+    ],
+    "R": [
+     200,
+     170
+    ],
+    "S": [
+     214,
+     187
+    ],
+    "T": [
+     206,
+     177
+    ],
+    "U": [
+     173,
+     178
+    ],
+    "V": [
+     210,
+     192
+    ],
+    "W": [
+     274,
+     184
+    ],
+    "X": [
+     193,
+     201
+    ],
+    "Y": [
+     196,
+     206
+    ],
+    "Z": [
+     189,
+     186
+    ]
+   }
+  }
+ ],
+ "florones": [
+  {
+   "id": "torno-01",
+   "uuid": "17edcb62-829f-4891-9dae-b54e6eac99d1",
+   "anio": "1869",
+   "autor": "Edward J. Woolsey",
+   "obra": "Specimens of Fancy Turning",
+   "url": "https://pdimagearchive.org/images/17edcb62-829f-4891-9dae-b54e6eac99d1/"
+  },
+  {
+   "id": "torno-02",
+   "uuid": "daa8f1cf-e331-4d01-97a1-6fc0de611a8f",
+   "anio": "1869",
+   "autor": "Edward J. Woolsey",
+   "obra": "Specimens of Fancy Turning",
+   "url": "https://pdimagearchive.org/images/daa8f1cf-e331-4d01-97a1-6fc0de611a8f/"
+  },
+  {
+   "id": "torno-03",
+   "uuid": "9dde478f-1a27-460f-aafb-ddd7fb831a40",
+   "anio": "1869",
+   "autor": "Edward J. Woolsey",
+   "obra": "Specimens of Fancy Turning",
+   "url": "https://pdimagearchive.org/images/9dde478f-1a27-460f-aafb-ddd7fb831a40/"
+  },
+  {
+   "id": "torno-04",
+   "uuid": "1508c92c-f180-4fe1-9f3a-3dba0676643c",
+   "anio": "1869",
+   "autor": "Edward J. Woolsey",
+   "obra": "Specimens of Fancy Turning",
+   "url": "https://pdimagearchive.org/images/1508c92c-f180-4fe1-9f3a-3dba0676643c/"
+  },
+  {
+   "id": "torno-05",
+   "uuid": "5452bb99-329a-43a5-8a17-de86d35f08fb",
+   "anio": "1869",
+   "autor": "Edward J. Woolsey",
+   "obra": "Specimens of Fancy Turning",
+   "url": "https://pdimagearchive.org/images/5452bb99-329a-43a5-8a17-de86d35f08fb/"
+  },
+  {
+   "id": "torno-07",
+   "uuid": "daadbb5e-db32-46bb-b52c-a0e75301b405",
+   "anio": "1869",
+   "autor": "Edward J. Woolsey",
+   "obra": "Specimens of Fancy Turning",
+   "url": "https://pdimagearchive.org/images/daadbb5e-db32-46bb-b52c-a0e75301b405/"
+  },
+  {
+   "id": "torno-08",
+   "uuid": "3bf83ecd-2898-4b4c-8bc8-d717da733057",
+   "anio": "1869",
+   "autor": "Edward J. Woolsey",
+   "obra": "Specimens of Fancy Turning",
+   "url": "https://pdimagearchive.org/images/3bf83ecd-2898-4b4c-8bc8-d717da733057/"
+  },
+  {
+   "id": "torno-10",
+   "uuid": "870d1684-1ef5-422d-8d03-165b0469db31",
+   "anio": "1869",
+   "autor": "Edward J. Woolsey",
+   "obra": "Specimens of Fancy Turning",
+   "url": "https://pdimagearchive.org/images/870d1684-1ef5-422d-8d03-165b0469db31/"
+  },
+  {
+   "id": "torno-12",
+   "uuid": "ac117a83-42ef-454a-ba3f-f2f9f98a17ad",
+   "anio": "1869",
+   "autor": "Edward J. Woolsey",
+   "obra": "Specimens of Fancy Turning",
+   "url": "https://pdimagearchive.org/images/ac117a83-42ef-454a-ba3f-f2f9f98a17ad/"
+  },
+  {
+   "id": "torno-13",
+   "uuid": "325e5d3d-8d51-4a82-828d-3a3626600d2d",
+   "anio": "1869",
+   "autor": "Edward J. Woolsey",
+   "obra": "Specimens of Fancy Turning",
+   "url": "https://pdimagearchive.org/images/325e5d3d-8d51-4a82-828d-3a3626600d2d/"
+  },
+  {
+   "id": "torno-14",
+   "uuid": "2e583300-34bc-437e-a03c-62792be0d11f",
+   "anio": "1869",
+   "autor": "Edward J. Woolsey",
+   "obra": "Specimens of Fancy Turning",
+   "url": "https://pdimagearchive.org/images/2e583300-34bc-437e-a03c-62792be0d11f/"
+  },
+  {
+   "id": "torno-15",
+   "uuid": "955b803f-17ea-4c8f-a649-6de8ffadbb74",
+   "anio": "1869",
+   "autor": "Edward J. Woolsey",
+   "obra": "Specimens of Fancy Turning",
+   "url": "https://pdimagearchive.org/images/955b803f-17ea-4c8f-a649-6de8ffadbb74/"
+  },
+  {
+   "id": "torno-16",
+   "uuid": "0e771271-003f-4071-9d7e-c5b72cd4b4fd",
+   "anio": "1869",
+   "autor": "Edward J. Woolsey",
+   "obra": "Specimens of Fancy Turning",
+   "url": "https://pdimagearchive.org/images/0e771271-003f-4071-9d7e-c5b72cd4b4fd/"
+  },
+  {
+   "id": "torno-17",
+   "uuid": "518232eb-bf22-4501-9254-f2262830886f",
+   "anio": "1869",
+   "autor": "Edward J. Woolsey",
+   "obra": "Specimens of Fancy Turning",
+   "url": "https://pdimagearchive.org/images/518232eb-bf22-4501-9254-f2262830886f/"
+  },
+  {
+   "id": "torno-18",
+   "uuid": "74a47e2a-d487-4050-8977-a190f1345fdd",
+   "anio": "1869",
+   "autor": "Edward J. Woolsey",
+   "obra": "Specimens of Fancy Turning",
+   "url": "https://pdimagearchive.org/images/74a47e2a-d487-4050-8977-a190f1345fdd/"
+  },
+  {
+   "id": "torno-19",
+   "uuid": "fe259bef-617e-4aa9-9de0-0de77d372c9c",
+   "anio": "1869",
+   "autor": "Edward J. Woolsey",
+   "obra": "Specimens of Fancy Turning",
+   "url": "https://pdimagearchive.org/images/fe259bef-617e-4aa9-9de0-0de77d372c9c/"
+  },
+  {
+   "id": "torno-20",
+   "uuid": "202f9c1a-b296-4670-ac5c-0b5a69eea0ba",
+   "anio": "1869",
+   "autor": "Edward J. Woolsey",
+   "obra": "Specimens of Fancy Turning",
+   "url": "https://pdimagearchive.org/images/202f9c1a-b296-4670-ac5c-0b5a69eea0ba/"
+  },
+  {
+   "id": "torno-21",
+   "uuid": "c74b298d-ace1-49b5-a5aa-1b65630e16c9",
+   "anio": "1869",
+   "autor": "Edward J. Woolsey",
+   "obra": "Specimens of Fancy Turning",
+   "url": "https://pdimagearchive.org/images/c74b298d-ace1-49b5-a5aa-1b65630e16c9/"
+  },
+  {
+   "id": "torno-22",
+   "uuid": "e6dc9387-6401-46f1-ab56-84a346df4020",
+   "anio": "1869",
+   "autor": "Edward J. Woolsey",
+   "obra": "Specimens of Fancy Turning",
+   "url": "https://pdimagearchive.org/images/e6dc9387-6401-46f1-ab56-84a346df4020/"
+  },
+  {
+   "id": "torno-23",
+   "uuid": "754ff356-47da-482b-af58-f92ff58c114d",
+   "anio": "1869",
+   "autor": "Edward J. Woolsey",
+   "obra": "Specimens of Fancy Turning",
+   "url": "https://pdimagearchive.org/images/754ff356-47da-482b-af58-f92ff58c114d/"
+  },
+  {
+   "id": "torno-27",
+   "uuid": "5a1d23f5-c988-447d-a1d7-f2c818a2d6ad",
+   "anio": "1869",
+   "autor": "Edward J. Woolsey",
+   "obra": "Specimens of Fancy Turning",
+   "url": "https://pdimagearchive.org/images/5a1d23f5-c988-447d-a1d7-f2c818a2d6ad/"
+  },
+  {
+   "id": "torno-28",
+   "uuid": "d03cb603-4689-4b87-88b3-26cbca05a5ff",
+   "anio": "1869",
+   "autor": "Edward J. Woolsey",
+   "obra": "Specimens of Fancy Turning",
+   "url": "https://pdimagearchive.org/images/d03cb603-4689-4b87-88b3-26cbca05a5ff/"
+  },
+  {
+   "id": "torno-30",
+   "uuid": "0edd4dcb-707d-456c-b3bb-d7119b9b7e17",
+   "anio": "1869",
+   "autor": "Edward J. Woolsey",
+   "obra": "Specimens of Fancy Turning",
+   "url": "https://pdimagearchive.org/images/0edd4dcb-707d-456c-b3bb-d7119b9b7e17/"
+  }
+ ]
+}
