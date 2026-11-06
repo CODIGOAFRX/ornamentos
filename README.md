@@ -44,7 +44,7 @@ Los scripts de Python están en [`pipeline/`](pipeline/):
 1. `recortar.py`: cada lámina se gira y se convierte en una máscara de tinta. Las letras están en rejilla: los cortes empiezan equidistantes y se mueven al mínimo de tinta más cercano, porque los adornos de una letra casi tocan los de la siguiente. Después se quitan las manchas pequeñas que tocan el borde de la celda (trozos de la letra vecina). Cada letra se nombra con el orden de su lámina, comprobado a ojo (`alfabetos.py`).
 2. `vectorizar.py`: la tinta se amplía al doble, se binariza y se traza con [potrace](https://potrace.sourceforge.net/) (`potracer`). El SVG usa `fill="currentColor"`. El alfabeto gótico es bicolor: el rojo de las rosetas se traza en su propia capa con `var(--ornamento-acento)`.
 3. `florones.py`: son fotografías de trazos claros sobre un fondo con viñeteado. Una mediana quita el grano, el fondo se estima con un desenfoque grande y se resta, y lo que queda pasa a ser el canal alfa.
-4. `catalogo.py`: escribe `app/datos/catalogo.json`, la única fuente de datos de la web.
+4. `catalogo.py`: junta `alfabetos.py` con lo que `vectorizar.py` y `florones.py` dejan en `pipeline/datos/` y escribe `app/datos/catalogo.json`, la única fuente de datos de la web.
 
 ```bash
 python -m venv .venv && .venv/Scripts/pip install numpy pillow potracer

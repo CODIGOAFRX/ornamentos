@@ -103,19 +103,23 @@ a:hover {
     letter-spacing: -0.02em;
 }
 
+/* El lema va al lado del título si cabe y, si no, debajo: el título no se puede estrechar */
 .portada {
-    display: grid;
-    grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+    display: flex;
+    flex-wrap: wrap;
     gap: 2rem clamp(2rem, 6vw, 6rem);
-    align-items: end;
+    align-items: flex-end;
     padding: clamp(3rem, 9vh, 6rem) var(--margen) clamp(2.5rem, 7vh, 4.5rem);
 }
 
+/* Con la capitular más ancha (la O barroca) el título mide unos 6em: en móviles estrechos la
+   letra se reduce para que quepa entre los márgenes */
 .portada h1 {
     display: flex;
+    flex: none;
     align-items: flex-end;
     margin: 0;
-    font: 400 clamp(3.6rem, 10vw, 8.5rem)/0.9 var(--titulo);
+    font: 400 min(14.5vw, clamp(3.6rem, 10vw, 8.5rem))/0.9 var(--titulo);
     letter-spacing: -0.02em;
 }
 
@@ -131,6 +135,7 @@ a:hover {
 }
 
 .lema {
+    flex: 1 1 18rem;
     max-width: 34rem;
     margin: 0;
     color: var(--tinta-suave);
@@ -555,7 +560,6 @@ output {
 }
 
 @media (max-width: 820px) {
-    .portada,
     .seccion-cabeza,
     .compositor {
         grid-template-columns: minmax(0, 1fr);

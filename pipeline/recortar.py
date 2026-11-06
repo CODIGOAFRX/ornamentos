@@ -8,7 +8,6 @@ equidistantes y se mueven al mínimo de tinta más cercano, porque los adornos d
 tocan los de la siguiente. Cada letra se guarda en PNG con la tinta como canal alfa y se nombra
 en el orden de la lámina con la lista de `letras` de su alfabeto (alfabetos.py).
 """
-import json
 import sys
 from pathlib import Path
 
@@ -80,7 +79,8 @@ def cortes(perfil, n, margen=0.22):
 
 def recortar(cfg, paginas, salida):
     salida.mkdir(parents=True, exist_ok=True)
-    imagen = Image.open(paginas / f"{cfg['pagina']}.jpg").convert('RGB').rotate(cfg.get('giro', -90), expand=True)
+    # Las láminas del escaneo están apaisadas: se ponen derechas
+    imagen = Image.open(paginas / f"{cfg['pagina']}.jpg").convert('RGB').rotate(-90, expand=True)
     w, h = imagen.size
     l, t, r, b = cfg['marco']
     marco = imagen.crop((int(w * l), int(h * t), int(w * r), int(h * b)))
@@ -127,9 +127,6 @@ def recortar(cfg, paginas, salida):
 if __name__ == '__main__':
     paginas, salida = Path(sys.argv[1]), Path(sys.argv[2])
     elegidos = sys.argv[3:] or list(ALFABETOS)
-    resumen = {}
     for id_ in elegidos:
-        cfg = {'id': id_, **ALFABETOS[id_]}
-        resumen[id_] = recortar(cfg, paginas, salida)
-        print(id_, len(resumen[id_]), 'letras')
-    (salida / 'recortes.json').write_text(json.dumps(resumen, ensure_ascii=False, indent=1), encoding='utf-8')
+        piezas = recortar({'id': id_, **ALFABETOS[id_]}, paginas, salida)
+        print(id_, len(piezas), 'letras')

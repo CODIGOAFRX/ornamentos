@@ -45,9 +45,23 @@ test('la letra se elige sin tildes y con las sustitutas de la época', () => {
     const veneciano = catalogo.alfabetos.find(a => a.id === 'veneciano');
     const barroco = catalogo.alfabetos.find(a => a.id === 'barroco');
     assert.equal(letraPara(barroco, '  «Érase una vez»').letra, 'E');
-    assert.deepEqual(letraPara(veneciano, 'Juan'), { letra: 'I', original: 'J', sustituta: 'I' });
-    assert.deepEqual(letraPara(veneciano, 'Una vez'), { letra: 'V', original: 'U', sustituta: 'V' });
-    assert.deepEqual(letraPara(barroco, 'Ñandú'), { letra: 'N', original: 'Ñ', sustituta: 'N' });
+    assert.deepEqual(letraPara(veneciano, 'Juan'), { letra: 'I', original: 'J', sustituta: 'I', resto: 'uan' });
+    assert.deepEqual(letraPara(veneciano, 'Una vez'), { letra: 'V', original: 'U', sustituta: 'V', resto: 'na vez' });
+    assert.deepEqual(letraPara(barroco, 'Ñandú'), { letra: 'N', original: 'Ñ', sustituta: 'N', resto: 'andú' });
     assert.equal(letraPara(veneciano, 'Kilo').letra, null);
     assert.equal(letraPara(barroco, '123').letra, null);
+});
+
+test('el párrafo sigue justo detrás de la letra, aunque empiece en minúscula', () => {
+    const barroco = catalogo.alfabetos.find(a => a.id === 'barroco');
+    assert.deepEqual(letraPara(barroco, 'en un lugar'), { letra: 'E', original: 'E', sustituta: null, resto: 'n un lugar' });
+    assert.equal(letraPara(barroco, 'hola Hector').resto, 'ola Hector');
+    // Lo que va antes de la primera letra (comillas, números) lo sustituye la capitular
+    assert.equal(letraPara(barroco, '  «Érase una vez»').resto, 'rase una vez»');
+});
+
+test('los datos intermedios del pipeline no están en la web', async () => {
+    for (const p of ['capitulares/vectorizado.json', 'florones/florones.json']) {
+        await assert.rejects(stat(media(p)), { code: 'ENOENT' }, p);
+    }
 });

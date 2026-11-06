@@ -5,7 +5,8 @@ Uso: python pipeline/florones.py <carpeta_fotos> <carpeta_app_media>
 Son fotografías de trazos claros sobre un fondo oscuro con viñeteado. El fondo se estima con un
 desenfoque grande y se resta: lo que queda por encima es el trazo, que pasa a ser el canal alfa
 de una imagen blanca. En la web se usan como máscara CSS (mask-image), así toman el color que
-se quiera con background-color.
+se quiera con background-color. La lista de florones, con su procedencia, se guarda en
+pipeline/datos/florones.json para catalogo.py.
 """
 import json
 import sys
@@ -17,6 +18,7 @@ from PIL import Image, ImageFilter
 # Las que tienen papel claro, arañazos o poco contraste se quedan fuera
 ELEGIDOS = [1, 2, 3, 4, 5, 7, 8, 10, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 27, 28, 30]
 LADO = 900
+DATOS = Path(__file__).resolve().parent / 'datos' / 'florones.json'
 
 
 def floron(foto):
@@ -58,5 +60,6 @@ if __name__ == '__main__':
         # Miniatura para la rejilla de la web: 23 florones grandes pesarían varios megas
         imagen.resize((220, 220), Image.LANCZOS).save(destino / f'{nombre}-mini.webp', quality=80, method=6)
         catalogo.append({'id': nombre, 'uuid': meta[archivo]['uuid'], 'anio': meta[archivo]['anio']})
-    (destino / 'florones.json').write_text(json.dumps(catalogo, ensure_ascii=False, indent=1), encoding='utf-8')
+    DATOS.parent.mkdir(exist_ok=True)
+    DATOS.write_text(json.dumps(catalogo, ensure_ascii=False, indent=1), encoding='utf-8')
     print(len(catalogo), 'florones')

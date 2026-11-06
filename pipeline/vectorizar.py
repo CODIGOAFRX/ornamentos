@@ -7,6 +7,9 @@ Uso: python pipeline/vectorizar.py <carpeta_recortes> <carpeta_app_media> [alfab
   toma el color del texto que la rodea. Si el alfabeto tiene `acento`, los píxeles de ese color
   (el rojo de las láminas bicolores) se trazan aparte con var(--ornamento-acento).
 - WebP: el recorte con su papel transparente, en el color de la lámina, a 480 px de alto.
+
+Los tamaños de cada letra se guardan en pipeline/datos/vectorizado.json, de donde los lee catalogo.py.
+Si se vectorizan sólo algunos alfabetos, los demás se conservan.
 """
 import json
 import sys
@@ -19,6 +22,7 @@ from PIL import Image
 from alfabetos import ALFABETOS
 
 ESCALA = 2
+DATOS = Path(__file__).resolve().parent / 'datos' / 'vectorizado.json'
 
 
 def trazado(mascara):
@@ -61,7 +65,7 @@ def vectorizar(png, cfg):
 if __name__ == '__main__':
     recortes, media = Path(sys.argv[1]), Path(sys.argv[2])
     elegidos = sys.argv[3:] or list(ALFABETOS)
-    catalogo = {}
+    catalogo = json.loads(DATOS.read_text(encoding='utf-8')) if DATOS.exists() else {}
     for id_ in elegidos:
         cfg = ALFABETOS[id_]
         destino = media / 'capitulares' / id_
@@ -76,4 +80,5 @@ if __name__ == '__main__':
             letras.append({'letra': png.stem, 'ancho': img.width, 'alto': img.height, 'kb': round(len(svg) / 1024, 1)})
         catalogo[id_] = letras
         print(id_, len(letras), 'letras,', round(sum(l['kb'] for l in letras)), 'KB de SVG')
-    (media / 'capitulares' / 'vectorizado.json').write_text(json.dumps(catalogo, ensure_ascii=False, indent=1), encoding='utf-8')
+    DATOS.parent.mkdir(exist_ok=True)
+    DATOS.write_text(json.dumps(catalogo, ensure_ascii=False, indent=1), encoding='utf-8')

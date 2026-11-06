@@ -5,41 +5,53 @@ import { letraPara } from './letras.js';
 
 const BASE = '/proyecto/ornamentos';
 const PUBLICO = `https://www.pedrogomez.dev${BASE}`;
+const ALFABETO_INICIAL = 'barroco';
 const $ = id => document.getElementById(id);
 
 const catalogo = await fetch(`${BASE}/datos/catalogo.json`).then(r => r.json());
-const estado = { alfabeto: 'barroco', color: '#1d1b17', lineas: 4, floron: catalogo.florones[0].id };
 
-const url = (a, letra, ext) => `${BASE}/media/capitulares/${a.id}/${letra}.${ext}`;
+// Dónde están los ornamentos: en esta web o, para el código que se copia, con el dominio delante
+const capitular = (a, letra, ext, raiz = BASE) => `${raiz}/media/capitulares/${a.id}/${letra}.${ext}`;
+const floron = (nombre, raiz = BASE) => `${raiz}/media/florones/${nombre}.webp`;
 const escapar = s => s.replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
 
 // ---------- compositor ----------
-const alfabetosCaja = $('alfabetos');
-alfabetosCaja.innerHTML = catalogo.alfabetos.map(a => `
+$('alfabetos').innerHTML = catalogo.alfabetos.map(a => `
     <label class="alfabeto${a.oscuro ? ' es-oscuro' : ''}">
-        <input type="radio" name="alfabeto" value="${a.id}"${a.id === estado.alfabeto ? ' checked' : ''}>
-        <span class="alfabeto-muestra" style="--letra:url('${url(a, 'A', 'svg')}')"></span>
+        <input type="radio" name="alfabeto" value="${a.id}"${a.id === ALFABETO_INICIAL ? ' checked' : ''}>
+        <span class="alfabeto-muestra" style="--letra:url('${capitular(a, 'A', 'svg')}')"></span>
         <span class="alfabeto-nombre">${a.nombre}<small>Siglo ${a.siglo}</small></span>
     </label>`).join('');
 
-function pintar() {
-    const a = catalogo.alfabetos.find(x => x.id === estado.alfabeto);
-    const texto = $('texto').value.trim() || 'Escribe un párrafo.';
-    const { letra, original, sustituta } = letraPara(a, texto);
-    const resto = texto.slice(texto.indexOf(original) + original.length);
-    const parrafo = $('parrafo');
-    const original_ = estado.color === 'original';
-    parrafo.style.setProperty('--lineas', estado.lineas);
-    parrafo.classList.toggle('sobre-oscuro', original_ && a.oscuro);
+const mandos = $('mandos').elements;
 
-    let capitular = '';
+/** Lo elegido en el formulario, que es el único sitio donde se guarda. */
+function opciones() {
+    const color = mandos.color.value;
+    return {
+        a: catalogo.alfabetos.find(x => x.id === mandos.alfabeto.value),
+        color,
+        imagen: color === 'original',
+        lineas: Number(mandos.lineas.value),
+    };
+}
+
+function pintar() {
+    const elegido = opciones();
+    const { a, color, imagen, lineas } = elegido;
+    const texto = mandos.texto.value.trim() || 'Escribe un párrafo.';
+    const { letra, original, sustituta, resto } = letraPara(a, texto);
+    const parrafo = $('parrafo');
+    parrafo.style.setProperty('--lineas', lineas);
+    parrafo.classList.toggle('sobre-oscuro', imagen && a.oscuro);
+    $('lineas-valor').textContent = lineas;
+
     if (letra) {
         const [w, h] = a.letras[letra];
-        capitular = original_
-            ? `<img class="capitular capitular-imagen" src="${url(a, letra, 'webp')}" alt="" style="aspect-ratio:${w} / ${h}">`
-            : `<span class="capitular" aria-hidden="true" style="--capitular:url('${url(a, letra, 'svg')}');aspect-ratio:${w} / ${h};background-color:${estado.color}"></span>`;
-        capitular += `<span class="sr-only">${escapar(original)}</span>`;
-        parrafo.innerHTML = capitular + escapar(resto);
+        const dibujo = imagen
+            ? `<img class="capitular capitular-imagen" src="${capitular(a, letra, 'webp')}" alt="" style="aspect-ratio:${w} / ${h}">`
+            : `<span class="capitular" aria-hidden="true" style="--capitular:url('${capitular(a, letra, 'svg')}');aspect-ratio:${w} / ${h};background-color:${color}"></span>`;
+        parrafo.innerHTML = `${dibujo}<span class="sr-only">${escapar(original)}</span>${escapar(resto)}`;
     } else {
         parrafo.innerHTML = escapar(texto);
     }
@@ -47,27 +59,31 @@ function pintar() {
         ? `El alfabeto ${a.nombre.toLowerCase()} no tiene ${original}: el párrafo se queda sin capitular.`
         : sustituta ? `Sin ${original} en este alfabeto: se usa la ${sustituta}, como se escribía entonces.` : '';
 
-    codigoCapitular(a, letra, original, resto);
+    codigoCapitular(elegido, letra, original, resto);
+
+    // La O del título es una capitular del alfabeto elegido
+    const [w, h] = a.letras.O;
+    $('h1-capitular').style.aspectRatio = `${w} / ${h}`;
+    $('h1-capitular').style.setProperty('--letra', `url('${capitular(a, 'O', 'svg')}')`);
 }
 
-function codigoCapitular(a, letra, original, resto) {
-    const extracto = escapar(resto.length > 60 ? `${resto.slice(0, 60).trim()}…` : resto);
+function codigoCapitular({ a, color, imagen, lineas }, letra, original, resto) {
     if (!letra) {
         $('html-capitular').textContent = '';
         $('css-capitular').textContent = '';
         $('descargas').innerHTML = '';
         return;
     }
+    const extracto = escapar(resto.length > 60 ? `${resto.slice(0, 60).trim()}…` : resto);
     const [w, h] = a.letras[letra];
-    const original_ = estado.color === 'original';
-    const html = original_
-        ? `<p class="con-capitular">\n  <img class="capitular" src="${PUBLICO}/media/capitulares/${a.id}/${letra}.webp" alt="" width="${w}" height="${h}"><span class="sr-only">${escapar(original)}</span>${extracto}\n</p>`
-        : `<p class="con-capitular">\n  <span class="capitular" aria-hidden="true" style="--capitular: url('${PUBLICO}/media/capitulares/${a.id}/${letra}.svg'); aspect-ratio: ${w} / ${h};"></span><span class="sr-only">${escapar(original)}</span>${extracto}\n</p>`;
+    const html = imagen
+        ? `<p class="con-capitular">\n  <img class="capitular" src="${capitular(a, letra, 'webp', PUBLICO)}" alt="" width="${w}" height="${h}"><span class="sr-only">${escapar(original)}</span>${extracto}\n</p>`
+        : `<p class="con-capitular">\n  <span class="capitular" aria-hidden="true" style="--capitular: url('${capitular(a, letra, 'svg', PUBLICO)}'); aspect-ratio: ${w} / ${h};"></span><span class="sr-only">${escapar(original)}</span>${extracto}\n</p>`;
     const css = `.capitular {
   float: left;
-  height: calc(${estado.lineas} * 1lh);
-  margin: 0.15em 0.4em 0 0;${original_ ? '' : `
-  background-color: ${estado.color};
+  height: calc(${lineas} * 1lh);
+  margin: 0.15em 0.4em 0 0;${imagen ? '' : `
+  background-color: ${color};
   -webkit-mask: var(--capitular) center / contain no-repeat;
   mask: var(--capitular) center / contain no-repeat;`}
 }
@@ -83,34 +99,24 @@ function codigoCapitular(a, letra, original, resto) {
     $('html-capitular').textContent = html;
     $('css-capitular').textContent = css;
     $('descargas').innerHTML = `
-        <a href="${url(a, letra, 'svg')}" download="${a.id}-${letra}.svg">SVG</a>
-        <a href="${url(a, letra, 'webp')}" download="${a.id}-${letra}.webp">WebP original</a>`;
+        <a href="${capitular(a, letra, 'svg')}" download="${a.id}-${letra}.svg">SVG</a>
+        <a href="${capitular(a, letra, 'webp')}" download="${a.id}-${letra}.webp">WebP original</a>`;
 }
 
-$('mandos').addEventListener('input', evento => {
-    const t = evento.target;
-    if (t.name === 'alfabeto') estado.alfabeto = t.value;
-    if (t.name === 'color') estado.color = t.value;
-    if (t.id === 'lineas') {
-        estado.lineas = Number(t.value);
-        $('lineas-valor').textContent = t.value;
-    }
-    pintar();
-});
+$('mandos').addEventListener('input', pintar);
 
 // ---------- florones ----------
-const listaFlorones = $('lista-florones');
-listaFlorones.innerHTML = catalogo.florones.map((f, i) => `
+$('lista-florones').innerHTML = catalogo.florones.map((f, i) => `
     <label class="floron">
         <input type="radio" name="floron" value="${f.id}"${i === 0 ? ' checked' : ''}>
-        <span class="floron-muestra-mini" style="--floron:url('${BASE}/media/florones/${f.id}-mini.webp')"></span>
+        <span class="floron-muestra-mini" style="--floron:url('${floron(`${f.id}-mini`)}')"></span>
         <span class="sr-only">Florón ${i + 1}</span>
     </label>`).join('');
 
 function pintarFloron() {
-    const f = catalogo.florones.find(x => x.id === estado.floron);
-    $('floron-muestra').style.setProperty('--floron', `url('${BASE}/media/florones/${f.id}.webp')`);
-    $('codigo-floron').textContent = `<hr class="floron" style="--floron: url('${PUBLICO}/media/florones/${f.id}.webp');">
+    const id = document.querySelector('input[name="floron"]:checked').value;
+    $('floron-muestra').style.setProperty('--floron', `url('${floron(id)}')`);
+    $('codigo-floron').textContent = `<hr class="floron" style="--floron: url('${floron(id, PUBLICO)}');">
 
 .floron {
   height: 4.5rem;
@@ -121,17 +127,14 @@ function pintarFloron() {
   mask: var(--floron) center / contain no-repeat;
 }`;
 }
-listaFlorones.addEventListener('input', evento => {
-    estado.floron = evento.target.value;
-    pintarFloron();
-});
+$('lista-florones').addEventListener('input', pintarFloron);
 
 // ---------- catálogo ----------
 $('lista-catalogo').innerHTML = catalogo.alfabetos.map(a => `
     <article class="alfabeto-catalogo${a.oscuro ? ' es-oscuro' : ''}" aria-labelledby="cat-${a.id}">
         <h3 id="cat-${a.id}">${a.nombre} <small>siglo ${a.siglo} · ${a.origen}${a.bicolor ? ' · bicolor' : ''}</small></h3>
         <ul class="letras">
-            ${Object.keys(a.letras).map(l => `<li><a href="${url(a, l, 'svg')}" download="${a.id}-${l}.svg" title="Descargar ${l} en SVG"><img src="${url(a, l, 'svg')}" alt="${l}" loading="lazy" decoding="async"></a></li>`).join('')}
+            ${Object.keys(a.letras).map(l => `<li><a href="${capitular(a, l, 'svg')}" download="${a.id}-${l}.svg" title="Descargar ${l} en SVG"><img src="${capitular(a, l, 'svg')}" alt="${l}" loading="lazy" decoding="async"></a></li>`).join('')}
         </ul>
     </article>`).join('');
 
@@ -154,15 +157,5 @@ document.addEventListener('click', async evento => {
     aviso.temporizador = setTimeout(() => aviso.classList.remove('visible'), 2200);
 });
 
-// La O del título es una capitular del alfabeto elegido
-const tituloCapitular = () => {
-    const a = catalogo.alfabetos.find(x => x.id === estado.alfabeto);
-    const [w, h] = a.letras.O;
-    Object.assign($('h1-capitular').style, { aspectRatio: `${w} / ${h}` });
-    $('h1-capitular').style.setProperty('--letra', `url('${url(a, 'O', 'svg')}')`);
-};
-$('mandos').addEventListener('input', tituloCapitular);
-
 pintar();
 pintarFloron();
-tituloCapitular();

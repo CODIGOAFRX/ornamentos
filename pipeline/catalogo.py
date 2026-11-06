@@ -2,14 +2,15 @@
 
 Uso: python pipeline/catalogo.py
 Es la única fuente de datos de la web; se genera a partir de alfabetos.py y de lo que dejan
-vectorizar.py y florones.py en app/media.
+vectorizar.py y florones.py en pipeline/datos.
 """
 import json
 from pathlib import Path
 
 from alfabetos import ALFABETOS
 
-APP = Path(__file__).resolve().parent.parent / 'app'
+PIPELINE = Path(__file__).resolve().parent
+APP = PIPELINE.parent / 'app'
 FUENTE = {
     'titulo': 'Alphabet-album: collection de soixante feuilles d’alphabets historiés et fleuronnés',
     'autor': 'Joseph-Balthazar Silvestre',
@@ -18,13 +19,14 @@ FUENTE = {
     'biblioteca': 'Boston Public Library',
 }
 
-vectorizado = json.loads((APP / 'media' / 'capitulares' / 'vectorizado.json').read_text(encoding='utf-8'))
-florones = json.loads((APP / 'media' / 'florones' / 'florones.json').read_text(encoding='utf-8'))
+vectorizado = json.loads((PIPELINE / 'datos' / 'vectorizado.json').read_text(encoding='utf-8'))
+florones = json.loads((PIPELINE / 'datos' / 'florones.json').read_text(encoding='utf-8'))
 
+# En el orden de alfabetos.py, del más antiguo al más moderno
 alfabetos = []
 for id_, cfg in ALFABETOS.items():
     if id_ not in vectorizado:
-        continue
+        raise SystemExit(f'{id_} no está vectorizado: python pipeline/vectorizar.py <recortes> app/media {id_}')
     alfabetos.append({
         'id': id_,
         'nombre': cfg['nombre'],
@@ -34,9 +36,6 @@ for id_, cfg in ALFABETOS.items():
         'bicolor': bool(cfg.get('acento')),
         'letras': {l['letra']: [l['ancho'], l['alto']] for l in vectorizado[id_]},
     })
-# Del más antiguo al más moderno
-orden = {'XI': 11, 'XIV': 14, 'XVI': 16, 'XVIII': 18, 'XIX': 19}
-alfabetos.sort(key=lambda a: orden.get(a['siglo'], 99))
 
 catalogo = {
     'fuente': FUENTE,
